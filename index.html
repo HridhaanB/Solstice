@@ -3,11 +3,16 @@
 	<head>
 		<title>Solstice</title>
 		<link rel="stylesheet" href="style.css">
+		<!-- <link rel="icon" href="logo.png"> -->
+		<script src="script.js"></script>
 	</head>
 	<body>
+		<img src="logo.png" width="100%">
 		<div class="container">
 			<div>
 				<h1>Visibility</hi>
+				<br><br><br>
+				<span id="distance" class="accent"><span id="num">10</span> km</span>
 			</div>
 			<div>
 				<h1>Oxygen Levels</h1>
@@ -16,14 +21,33 @@
 				<h1>Water Usage</h1>
 			</div>
 			<div>
-				<h1>Forecast</h1>
+				<h1>Surface Temp.</h1>
 			</div>
 			<div>
 				<h1>Messages</h1>
 			</div>
 			<div>
 				<h1>Alerts</h1>
+				<form style="text-align:left">
+					<br>
+					<input type="checkbox" id="Hydration">
+					<label for="Hydration">Hydration Reminder</label><br>
+					<input type="checkbox" id="Sleep">
+					<label for="Sleep">Sleep Reminder</label><br>
+					<input type="checkbox" id="Food">
+					<label for="Food">Meal Reminder</label>
+				</form>
 			</div>
 		</div>
 	</body>
+	<script>
+function dist() {
+	x = Math.floor(Math.random()*6)+7;
+	if (x<10) {
+		x = "0" + x;
+	}
+	document.getElementById("num").innerHTML = x;
+}
+setInterval(dist, 3000);
+	</script>
 </html>
