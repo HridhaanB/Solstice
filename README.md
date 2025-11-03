@@ -11,7 +11,7 @@ In the dashboard, you can see
 - Messages from Crewmates
 - Alerts and Notifications
 ## Why Use Solstice  
-Solstice is the best at centralizing vital information for your needs
+Solstice is the best at centralizing vital information for your needs. There is nothing else quite like it.
 
 ---
 Made by Hridhaan Banerjee, Ian Kim, and Srikar Kovvali
