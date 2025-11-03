@@ -1,0 +1,32 @@
+body {
+	background-color: #1d2333;
+	color: #F7F0E8;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+.container {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	gap: 50px;
+	width: 75%;
+	margin: auto;
+}
+
+.accent {
+	color: #CC4400;
+}
+
+.container div {
+	background-color: #10131c;
+	aspect-ratio: 1/1;
+	border-radius: 50px;
+	border-style: solid;
+	border-color: #F7F0E8;
+	padding: 10px;
+	text-align: center;
+	border-width: 3px;
+}
+
+.container div:hover {
+	box-shadow: 0px 0px 10px red;
+}
