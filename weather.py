@@ -15,13 +15,22 @@ for i in range(24):
     df.loc[i] = i, -30 * math.cos(0.261799387799 * (-i - 3)) - 50 + random.random()*5-2.5
 
 fig, ax = plt.subplots()
-line, = ax.plot(df['Hours Ago'], df['Surface Temperature (°C)'])
+line, = ax.plot(df['Hours Ago'], df['Surface Temperature (°C)'], color = '#CC4400')
 ax.set_xlabel('Hours Ago')
 ax.set_ylabel('Surface Temperature (°C)')
 ax.set_ylim(-100, 0)
 ax.xaxis.set_inverted(True)
 ax.set_title('Surface Temperature Over Time')
-
+fig.patch.set_facecolor('#10131c')
+ax.set_facecolor('#10131c')
+ax.spines['bottom'].set_color('#10131c')
+ax.spines['top'].set_color('#10131c')
+ax.spines['right'].set_color('#10131c')
+ax.spines['left'].set_color('#10131c')
+ax.tick_params(axis='x', colors='#CC4400')
+ax.tick_params(axis='y', colors='#CC4400')
+ax.yaxis.label.set_color('#CC4400')
+ax.xaxis.label.set_color('#CC4400')
 
 def update(frame):
     global counter
