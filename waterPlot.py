@@ -17,12 +17,22 @@ for i in range(49):
     df.loc[i] = i, water
 
 fig, ax = plt.subplots()
-line, = ax.plot(df['Hours Ago'], df['Water Used (L)'])
+line, = ax.plot(df['Hours Ago'], df['Water Used (L)'], color = '#CC4400')
 ax.set_xlabel('Hours Ago')
 ax.set_ylabel('Water Used (L)')
 ax.set_ylim(0, 20)
 ax.xaxis.set_inverted(True)
 ax.set_title('Water Usage Over Time')
+fig.patch.set_facecolor('#10131c')
+ax.set_facecolor('#10131c')
+ax.spines['bottom'].set_color('#10131c')
+ax.spines['top'].set_color('#10131c')
+ax.spines['right'].set_color('#10131c')
+ax.spines['left'].set_color('#10131c')
+ax.tick_params(axis='x', colors='#CC4400')
+ax.tick_params(axis='y', colors='#CC4400')
+ax.yaxis.label.set_color('#CC4400')
+ax.xaxis.label.set_color('#CC4400')
 
 def update(frame):
     current_values = df['Water Used (L)'].tolist()
