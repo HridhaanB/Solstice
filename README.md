@@ -10,7 +10,8 @@ In the dashboard, you can see
 - Surface Temperature
 - Messages from Crewmates
 - Alerts and Notifications
-## Why Use Solstice
+## Why Use Solstice  
 Solstice is the best at centralizing vital information for your needs
+
 ---
 Made by Hridhaan Banerjee, Ian Kim, and Srikar Kovvali
