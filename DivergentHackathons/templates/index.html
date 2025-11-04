@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Solstice</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script>
+    function refreshPlot() {
+      const img = document.getElementById('oxygen-plot');
+      img.src = '/plot.png?t=' + new Date().getTime(); // prevent caching
+    }
+    setInterval(refreshPlot, 1000); // update every second
+  </script>
+</head>
+<body>
+	<img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" width="100%">
+  <div class="container">
+    <div class="card">
+      <h1>Visibility</h1>
+		<br><br><br>
+		<span id="distance" class="accent"><span id="num">10</span> km</span>
+    </div>
+    <div class="card">
+      <h1>Oxygen Levels</h1>
+      <img id="oxygen-plot" src="/plot.png" alt="Oxygen Concentration Graph">
+    </div>
+    <div class="card">
+      <h1>Water Usage</h1>
+        <img id="water-plot" src="/plot_water.png" alt="Water Usage Graph">
+
+    </div>
+    <div class="card">
+      <h1>Surface Temp</h1>
+        <img id="forecast-plot" src="/plot_forecast.png" alt="Forecast Graph">
+    </div>
+    <div class="card">
+      <h1>Messages</h1>
+      				<br>
+				<div id="chat">
+					<p>Commander: Watney, get back here!</p>
+					<p>Mark: ok</p>
+					<p>Vogel: Who is collecting the data</p>
+					<p>Beth: idk i thought Chris was gonna do that</p>
+					<p>Chris: wut</p>
+				</div>
+				<input type="text" placeholder="Send a message" width="100%">
+    </div>
+    <div class="card">
+      <h1>Alerts</h1>
+		<form style="text-align:left">
+			<br>
+			<input type="checkbox" id="Hydration">
+			<label for="Hydration">Hydration Reminder</label><br>
+			<input type="checkbox" id="Sleep">
+			<label for="Sleep">Sleep Reminder</label><br>
+			<input type="checkbox" id="Food">
+			<label for="Food">Meal Reminder</label>
+		</form>
+    </div>
+  </div>
+</body>
+	<script>
+function refreshPlots() {
+    const oxygenImg = document.getElementById('oxygen-plot');
+    oxygenImg.src = '/plot_oxygen.png?t=' + new Date().getTime();
+
+    const waterImg = document.getElementById('water-plot');
+    waterImg.src = '/plot_water.png?t=' + new Date().getTime();
+
+    const forecastImg = document.getElementById('forecast-plot');
+    forecastImg.src = '/plot_forecast.png?t=' + new Date().getTime();
+}
+setInterval(refreshPlots, 1000);
+
+function dist() {
+	x = Math.floor(Math.random()*6)+7;
+	if (x<10) {
+		x = "0" + x;
+	}
+	document.getElementById("num").innerHTML = x;
+}
+setInterval(dist, 3000);
+
+
+	</script>
+</html>
